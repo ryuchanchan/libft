@@ -18,15 +18,15 @@ char *ft_strdup(const char *s1)
     return (data);
 }
 
-#include <stdio.h>
-#include <string.h>
-#define STR "string"
+// #include <stdio.h>
+// #include <string.h>
+// #define STR "string"
 
-int main()
-{
-    char *s;
+// int main()
+// {
+//     char *s;
 
-    s = ft_strdup(STR);
-    printf("s= %s\n", s);
-    free(s);
-}
+//     s = ft_strdup(STR);
+//     printf("s= %s\n", s);
+//     free(s);
+// }

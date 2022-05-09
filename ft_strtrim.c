@@ -22,25 +22,25 @@ char *ft_strtrim(char const *s1, char const *set)
     return (trim);
 }
 
-#include <stdio.h>
-int main()
-{
-    char *t;
-    char *s = (char *)malloc(10);
-    char *set = (char *)malloc(10);
-    set[0] = '0';
-    set[1] = '1';
+// #include <stdio.h>
+// int main()
+// {
+//     char *t;
+//     char *s = (char *)malloc(10);
+//     char *set = (char *)malloc(10);
+//     set[0] = '0';
+//     set[1] = '1';
 
-    int i = 0;
-    while (i < 10)
-    {
-        s[i] = '0' + i;
-        i++;
-    }
-    t = ft_strtrim(s, "0123");
+//     int i = 0;
+//     while (i < 10)
+//     {
+//         s[i] = '0' + i;
+//         i++;
+//     }
+//     t = ft_strtrim(s, "0123");
 
-    printf("%s\n", t);
-    free(t);
-    free(set);
-    free(s);
-}
+//     printf("%s\n", t);
+//     free(t);
+//     free(set);
+//     free(s);
+// }

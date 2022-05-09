@@ -16,13 +16,13 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
     return (data);
 }//s +start
 
-#include <stdio.h>
-#include <string.h>
-int main()
-{
-    char* str = ft_substr("Hey, 42tokyo!", 7, 5);
-    printf("%s\n", str);
+// #include <stdio.h>
+// #include <string.h>
+// int main()
+// {
+//     char* str = ft_substr("Hey, 42tokyo!", 7, 5);
+//     printf("%s\n", str);
 
-    char *str2 = ft_substr("Hey, 42tokyo!", 13, 5);
-    printf("%s\n", str2);
-}
+//     char *str2 = ft_substr("Hey, 42tokyo!", 13, 5);
+//     printf("%s\n", str2);
+// }
