@@ -16,8 +16,8 @@ char *ft_strtrim(char const *s1, char const *set)
     back_finder = ft_strlen(s1);
     while (ft_strchr(set, s1[back_finder]) != NULL && back_finder > front_finder)
         back_finder--;
-    // if (front_finder == back_finder)
-    //     return (ft_substr(s1, front_finder, 1));
+    if (front_finder == back_finder)
+        return (ft_substr(s1, front_finder, 1));
     trim = ft_substr(s1, front_finder, back_finder - front_finder + 1);
     return (trim);
 }
@@ -38,4 +38,7 @@ int main()
     result3 = ft_strtrim(NULL, ",");
     printf("%s\n", result3);
 
+    char *result4;
+    result4 = ft_strtrim(NULL, ",");
+    printf("%s\n", result4);
 }
