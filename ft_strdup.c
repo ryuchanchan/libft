@@ -14,7 +14,7 @@ char *ft_strdup(const char *s1)
       data[i] = s1[i];
       i++;
     }
-    //data[i] = '\0';
+    data[i] = '\0';
     return (data);
 }
 

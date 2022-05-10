@@ -25,7 +25,7 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 // int main()
 // {
 //     char a[] = "ABDEFG";
-//     char b[] = "ACCDEFG";
+//     char b[] = "ADCDEFG";
 
 //     printf("%d\n", ft_memcmp(a, b, 7));
 //     printf("%d\n", memcmp(a, b, 7));
@@ -38,11 +38,12 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 
 //     char aa[] = "ABCDEFG";
 //     char bb[] = "ABCDEFG";
+//     printf("%d\n", memcmp(aa, bb, 7));
 //     printf("%d\n", ft_memcmp(aa, bb, 7));
 
 //     printf("-----------\n");
 //     char aaa[] = "A\0CDFFG";
 //     char bbb[] = "A\0CDEFG";
-//     printf("%d\n", ft_memcmp(aaa, bbb, 7));
-//     printf("%d\n", memcmp(aaa, bbb, 7));
+//     printf("%d\n", ft_memcmp(aaa, bbb, 257));
+//     printf("%d\n", memcmp(aaa, bbb, 257));
 // }

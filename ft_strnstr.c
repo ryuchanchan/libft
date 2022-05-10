@@ -30,16 +30,30 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 // #include <stdio.h>
 // int main()
 // {
-//     char    *s1 = "ab";//\0DE123  ab
-//     char    *s2 = "efg";
-//     // size_t  max = strlen(s2);
+//     char    *s1 = "ab";
+//     char    *s2 = "";
 //     char    *i1 = strnstr(s1, s2, 9);
 //     char    *i2 = ft_strnstr(s1, s2, 9);
 //     printf("strnstr: %s\nft_strnstr: %s\n", i1, i2);
+//     printf("----------------\n");
 
-//     char    *ss1 = "abcdefghijk";//\0DE123  ab
+//     char    *ss1 = "abcdefghijk";
 //     char    *ss2 = "efg";
 //     char    *ii1 = strnstr(ss1, ss2, 11);
 //     char    *ii2 = ft_strnstr(ss1, ss2, 11);
 //     printf("strnstr: %s\nft_strnstr: %s\n", ii1, ii2);
+//     printf("----------------\n");
+
+//     char    *sss1 = "\0DE123  ab";
+//     char    *sss2 = "D";
+//     char    *iii1 = strnstr(sss1, sss2, 11);
+//     char    *iii2 = ft_strnstr(sss1, sss2, 11);
+//     printf("strnstr: %s\nft_strnstr: %s\n", iii1, iii2);
+//     printf("----------------\n");
+
+//     char    *ssss1 = "abcdefghijk";
+//     char    *ssss2 = "efg";
+//     char    *iiii1 = strnstr(ssss1, ssss2, 2);
+//     char    *iiii2 = ft_strnstr(ssss1, ssss2, 2);
+//     printf("strnstr: %s\nft_strnstr: %s\n", iiii1, iiii2);
 // }

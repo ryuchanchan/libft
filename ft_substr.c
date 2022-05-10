@@ -4,6 +4,8 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 {
     char *data;
 
+    if (!s)
+        return (NULL);
     data = (char *)malloc(sizeof(*s) * (len + 1));
     if (!data)
         return (NULL);
@@ -14,15 +16,18 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
     else
         ft_strlcpy(data, &s[start], len + 1);
     return (data);
-}//s +start
+}
 
-// #include <stdio.h>
-// #include <string.h>
-// int main()
-// {
-//     char* str = ft_substr("Hey, 42tokyo!", 7, 5);
-//     printf("%s\n", str);
+/*#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char *str = ft_substr("Hey, 42tokyo!", 7, 5);
+    printf("%s\n", str);
 
-//     char *str2 = ft_substr("Hey, 42tokyo!", 13, 5);
-//     printf("%s\n", str2);
-// }
+    char *str2 = ft_substr("Hey, 42tokyo!", 13, 5);
+    printf("%s\n", str2);
+
+    char *str3 = ft_substr(NULL, 7, 5);
+    printf("%s\n", str3);
+}*/
