@@ -15,18 +15,18 @@ void *ft_calloc(size_t count, size_t size)
     return (data);
 }
 
-// #include <stdio.h>
-// int main()
-// {
-//     int *mem,*p;
-//     int i;
+/*#include <stdio.h>
+int main()
+{
+    int *mem,*p;
+    int i;
 
-//     mem = (int *)ft_calloc(500,sizeof(int));
-//     p = mem;
-//     for (i=0; i<500; i++) {
-//         *p = i;
-//         printf("%d ",*p);
-//         p++;
-//     }
-//     free(mem);
-// }
+    mem = (int *)ft_calloc(500,sizeof(int));
+    p = mem;
+    for (i=0; i<500; i++) {
+        *p = i;
+        printf("%d ",*p);
+        p++;
+    }
+    free(mem);
+}*/

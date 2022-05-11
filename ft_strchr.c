@@ -14,17 +14,20 @@ char *ft_strchr(const char *s, int c)
     return (NULL);
 }
 
-// #include <string.h>
-// #include <stdio.h>
-// int main()
-// {
-//     char *a = "a0cdecvvv\0  2";
-//     char *b, *c, *d;
-//     b = ft_strchr(a, 0);
-//     printf("%s\n", b);
-//     c = strchr(a, 'a' + 256);
-//     printf("%s\n", c);
+/*#include <string.h>
+#include <stdio.h>
+int main()
+{
+    char *a = "a0cdecvvv\0  2";
+    char *b, *c, *d, *e;
+    b = ft_strchr(a, 0);
+    printf("%s\n", b);
+    c = strchr(a, 'a' + 256);
+    printf("%s\n", c);
 
-//     d = ft_strchr(a, 'a' + 256);
-//     printf("%s\n", d);
-// }
+    d = ft_strchr(a, 'a' + 256);
+    printf("%s\n", d);
+
+    e = ft_strchr(a, 'c');
+    printf("%s\n", e);
+}*/

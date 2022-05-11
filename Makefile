@@ -19,3 +19,5 @@ fclean: clean
 	$(RM) libft.a
 clean:
 	$(RM) $(OBJS) $(B_OBJS)
+
+.PHONY: all clean fclean re bonus
