@@ -10,7 +10,7 @@ RM		= rm
 all: $(NAME)
 $(NAME):	$(OBJS)
 	ar rs $@ $^
-$(OBJS): $(SRCS)
+%.o: %.c
 	$(CC) $(CFLAGS) -o $@ -c $<
 re: fclean all
 bonus : $(OBJS) $(BONUS)

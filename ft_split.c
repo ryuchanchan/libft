@@ -1,25 +1,11 @@
 #include "libft.h"
-#include <stdio.h>
 
-
-// static int	check(char const *s, char c)//対象文字
-// {
-// 	size_t	i;
-// 	i = 0;
-// 	while (s[i] != '\0')
-// 	{
-// 		if (s[i] == c)
-// 			return (1);
-// 		i++;
-// 	}
-// 	return (0);
-// }
-static size_t	check(const char *s, char c)
+static size_t	check(const char *s, char sep)
 {
 	size_t	i;
 
 	i = 0;
-	while (s[i] && s[i] != c)
+	while (s[i] && s[i] != sep)
 		i++;
 	return (i);
 }
@@ -52,7 +38,7 @@ static char	**arrays(char **ss, size_t sc, const char *s, const char c)
 {
 	size_t	i;
 	size_t	j;
-	size_t	len;
+	size_t	lens;
 
 	i = 0;
 	j = -1;
@@ -60,8 +46,8 @@ static char	**arrays(char **ss, size_t sc, const char *s, const char c)
 	{
 		while (s[i] == c)
 			i++;
-		len = check(s + i, c);
-		ss[j] = ft_strndup(s + i, len);
+		lens = check(s + i, c);
+		ss[j] = ft_strndup(s + i, lens);
 		if (ss[j] == NULL)
 		{
 			while (j--)
@@ -69,7 +55,7 @@ static char	**arrays(char **ss, size_t sc, const char *s, const char c)
 			free(ss);
 			return (NULL);
 		}
-		i += len;
+		i += lens;
 	}
 	ss[j] = NULL;
 	return (ss);
@@ -99,6 +85,7 @@ static size_t count_element_size(char const *s, char c)
 	}
 	if (s[i - 1] != c)
 		count++;
+	
 	return (count);
 }
 
@@ -114,72 +101,20 @@ char	**ft_split(char const *s, char c)
 	if (!splits)
 		return (0);
 	arrays(splits, element_size + 1, (char *)s, c);
-
 	return (splits);
 }
 
-int main(void)
-{
-	char **spi;
-	int i = 0;
-
-	spi = ft_split(",,,-42,tokyo_osaka ,nagoya,fukuoka, okinawa, - ,,,", ',');//9つ 最初と最後は数えない　連続したら無視する
-	while (spi[i])
-	{
-		printf("%s\n", spi[i]);
-		i++;
-	}
-	return (0);
-}
-
-// static void	arrays(char ***array_of_str, size_t sep_count, char *original_s, char sep)
+// #include <stdio.h>
+// int main(void)
 // {
-// 	size_t		i;
-// 	size_t j;
-// 	char	*strs;
-// 	char	*start;
+// 	char **spi;
+// 	int i = 0;
 
-// 	strs = original_s;
-// 	start = original_s;
-
-// 	i = 0;
-// 	j = -1;
-
-// 	while (++j < sep_count)
+// 	spi = ft_split(",,,-42,tokyo_osaka ,nagoya,fukuoka,, okinawa,-,,,", ',');//最初と最後は数えない　連続したら無視する,,,-42,tokyo_osaka ,nagoya,fukuoka,, okinawa,-,,,
+// 	while (spi[i])
 // 	{
-// 		while (i < sep_count)
-// 	{
-// 		if (!(*strs))
-// 		{
-// 			if (start != strs){
-// 				(*array_of_str)[i++] = ft_strndup(start, (int)(strs - start));
-// 			}
-// 			while (check(strs, sep)){
-// 				strs++;
-// 			}
-// 			start = strs;
-// 			i++;
-// 		}
-// 		else
-// 			strs++;
+// 		printf("\"%s\" ", spi[i]);
+// 		i++;
 // 	}
-// 	(*array_of_str)[i] = 0;
-// }
-
-
-// char	**ft_split(char const *s, char c)
-// {
-// 	char		**splits;
-// 	size_t		element_size;
-	
-// 	if (!s)
-// 		return (NULL);
-// 	element_size = count_element_size(s, c);
-// 	splits = (char **)malloc(sizeof(char *) * (element_size + 1));
-// 	if (!splits)
-// 		return (0);
-// 	arrays(&splits, element_size + 1, (char *)s, c);
-// 	// while (*s && !check(&s[i], c))
-// 	// 	s++;
-// 	return (splits);
+// 	return (0);
 // }
