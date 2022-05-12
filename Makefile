@@ -8,7 +8,7 @@ B_OBJS	= $(BONUS:.c=.o)
 RM		= rm
 
 all: $(NAME)
-$(NAME):	$(OBJS)
+$(NAME): $(OBJS) $(B_OBJS)
 	ar rs $@ $^
 %.o: %.c
 	$(CC) $(CFLAGS) -o $@ -c $<

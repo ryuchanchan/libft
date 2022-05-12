@@ -23,9 +23,8 @@ char *ft_itoa(int n)
 
     size = get_s(n);
     convert = (char *)malloc((size + 1) * sizeof(char));
-    // if (n == NULL)
-    //     return (NULL);
-    // return (n);
+    if (!(convert))
+        return (NULL);
     if (n < 0)
     {
         i = n * -1;

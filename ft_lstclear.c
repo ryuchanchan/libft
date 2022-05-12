@@ -4,6 +4,8 @@ void ft_lstclear(t_list **lst, void (*del)(void *))
 {
     t_list *tmp;
 
+    tmp = *lst;
+
     if (lst && tmp)
     {
         while (*lst)

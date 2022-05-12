@@ -74,18 +74,12 @@ static size_t count_element_size(char const *s, char c)
 		i++;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if ((s[i] != c) && ((s[i + 1] == c) || (s[i + 1] == '\0')))
 		{
-			count+=1;
-			while (s[i] && s[i] == c)
-				i++;
-			continue ;
+			count += 1;
 		}
 		i++;
 	}
-	if (s[i - 1] != c)
-		count++;
-	
 	return (count);
 }
 
@@ -100,7 +94,7 @@ char	**ft_split(char const *s, char c)
 	splits = (char **)malloc(sizeof(char *) * (element_size + 1));
 	if (!splits)
 		return (0);
-	arrays(splits, element_size + 1, (char *)s, c);
+	arrays(splits, element_size, (char *)s, c);
 	return (splits);
 }
 
@@ -110,11 +104,13 @@ char	**ft_split(char const *s, char c)
 // 	char **spi;
 // 	int i = 0;
 
-// 	spi = ft_split(",,,-42,tokyo_osaka ,nagoya,fukuoka,, okinawa,-,,,", ',');//最初と最後は数えない　連続したら無視する,,,-42,tokyo_osaka ,nagoya,fukuoka,, okinawa,-,,,
+// 	spi = ft_split(",", ',');//最初と最後は数えない　連続したら無視する,,,-42,tokyo_osaka ,nagoya,fukuoka,, okinawa,-,,,
 // 	while (spi[i])
 // 	{
-// 		printf("\"%s\" ", spi[i]);
+// 		printf("%s\n", spi[i]);
+// 		// printf("\"%s\" ", spi[i]);
 // 		i++;
 // 	}
+// 	//printf("count = %zu\n", count_element_size(",,-42,tokyo_osaka ,nagoya,fukuoka,, okinawa,-,,,", ','));
 // 	return (0);
 // }

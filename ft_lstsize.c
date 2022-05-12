@@ -7,7 +7,7 @@ int ft_lstsize(t_list *lst)
 
     lst_count = lst;
     i = 0;
-    while (lst_count != '\0')
+    while (lst_count != 0)
     {
         lst_count = lst_count ->next;
         i++;
