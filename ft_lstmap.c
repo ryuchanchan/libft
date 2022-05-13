@@ -24,13 +24,5 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
         lst = lst->next;
     }
     return (create);
-}//適応させた新しいリスト
-// 	/* 5 6 7 8 */ for (int i = 0; i < 4; ++i)
-// 	{
-// 		check(*(int*)tmp->content == i + 1);
-// 		tmp = tmp->next;
-// 	}
-// 	freeList(l); ft_lstclear(&m, free); showLeaks();
-// 	write(1, "\n", 1);
-// 	return (0);
-// }
+}
+//適応させた新しいリスト
