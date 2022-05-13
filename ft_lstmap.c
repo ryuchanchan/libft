@@ -2,25 +2,35 @@
 
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-    t_list  *start;
-    t_list  *cur;
+    t_list  *create;
+    t_list  *overwrite;
 
-    start = ft_lstnew(f(lst->content));
-    if (start == NULL)
+    if (!lst || !f)
         return (NULL);
-    cur = start;
-    while (1)
+    create = ft_lstnew(f(lst->content));
+    if (!create)
+        return (NULL);
+    overwrite = create;
+    lst = lst->next;//第二リストにインクリメントする
+    while (lst != NULL)
     {
-        if (lst->next == NULL)
-            break ;
-        cur->next = ft_lstnew(f(lst->content));
-        if (cur->next == NULL)
+        overwrite->next = ft_lstnew(f(lst->content));
+        if (overwrite->next == NULL)
         {
-            ft_lstclear(&start, del);
+            ft_lstclear(&create, del);
             return (NULL);
         }
-        cur = cur->next;
-        lst = lst->next;    
+        overwrite = overwrite->next;
+        lst = lst->next;
     }
-    return (start);
-}
+    return (create);
+}//適応させた新しいリスト
+// 	/* 5 6 7 8 */ for (int i = 0; i < 4; ++i)
+// 	{
+// 		check(*(int*)tmp->content == i + 1);
+// 		tmp = tmp->next;
+// 	}
+// 	freeList(l); ft_lstclear(&m, free); showLeaks();
+// 	write(1, "\n", 1);
+// 	return (0);
+// }

@@ -2,12 +2,22 @@
 
 t_list *ft_lstnew(void *content)
 {
-    t_list *lists;
+    t_list *param;
 
-    lists = (t_list *)malloc(sizeof(t_list));
-    if (lists == NULL)
+    param = (t_list *)malloc(sizeof(t_list));
+    if (param == NULL)
         return (NULL);
-    lists ->content = content;
-    lists ->next = NULL;
-    return (lists);
+    param ->content = content;
+    param ->next = NULL;
+    return (param);
 }
+
+// #include <stdio.h>
+// int	main(void)
+// {
+//     char str[] = "42";
+//     t_list	*para;
+    
+//     para = ft_lstnew((void *)str);
+//     printf("%s\n", para->content);
+// }
