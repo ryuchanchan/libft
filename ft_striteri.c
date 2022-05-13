@@ -18,7 +18,7 @@ void ft_striteri(char *s, void (*f)(unsigned int, char*))
 
 // void my_func(unsigned int i, char *str)
 // {
-//     printf("My inner function: index = %d and the string is %s\n", i, str);
+//     printf("My inner function: index = %d string = %s\n", i, str);
 // }
 
 // int main()
