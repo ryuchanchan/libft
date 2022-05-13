@@ -44,18 +44,18 @@ char *ft_itoa(int n)
     return (convert_c);
 }
 
-#include <stdio.h>
-int main()
-{
-    // int a = 12345678;
-    // int b = -12345678;
-    int c = -123;
+// #include <stdio.h>
+// int main()
+// {
+//     // int a = 12345678;
+//     // int b = -12345678;
+//     int c = -123;
 
-    // char *n = ft_itoa(a);
-    // char *nn = ft_itoa(b);
-    char *nnn = ft_itoa(c);
+//     // char *n = ft_itoa(a);
+//     // char *nn = ft_itoa(b);
+//     char *nnn = ft_itoa(c);
 
-    // printf("%s\n", n);
-    // printf("%s\n", nn);
-    printf("%s\n", nnn);
-}
+//     // printf("%s\n", n);
+//     // printf("%s\n", nn);
+//     printf("%s\n", nnn);
+// }
