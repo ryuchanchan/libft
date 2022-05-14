@@ -18,16 +18,17 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
     return (data);
 }
 
-/*#include <stdio.h>
-#include <string.h>
-int main()
-{
-    char *str = ft_substr("Hey, 42tokyo!", 7, 5);
-    printf("%s\n", str);
 
-    char *str2 = ft_substr("Hey, 42tokyo!", 13, 5);
-    printf("%s\n", str2);
+// #include <stdio.h>
+// #include <string.h>
+// int main()
+// {
+//     char *str = ft_substr("Hey, 42tokyo!", 7, 5);
+//     printf("%s\n", str);
 
-    char *str3 = ft_substr(NULL, 7, 5);
-    printf("%s\n", str3);
-}*/
+//     char *str2 = ft_substr("Hey, 42tokyo!", 13, 5);
+//     printf("%s\n", str2);
+
+//     char *str3 = ft_substr(NULL, 7, 5);
+//     printf("%s\n", str3);
+// }

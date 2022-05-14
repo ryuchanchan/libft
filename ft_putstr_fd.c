@@ -13,3 +13,20 @@ void ft_putstr_fd(char *s, int fd)
         i++;
     }
 }
+
+// #include <stdio.h>
+// #include <fcntl.h>
+
+// int main(void) {
+//     const char* filename = "./sample2.txt";
+
+//     int fd = open(filename, O_RDWR | O_CREAT);
+//     if (fd == -1) {
+//         perror("no open");
+//         exit(EXIT_FAILURE);
+//     }
+//     ft_putstr_fd("abcdef",fd);
+//     printf("ok\n");
+//     close(fd);
+//     exit(EXIT_SUCCESS);
+// }
