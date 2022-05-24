@@ -1,30 +1,30 @@
 #include "libft.h"
 
-char *ft_strnstr(const char *haystack, const char *needle, size_t len)
-{
-       size_t needle_len;
-       size_t i;
-
-       needle_len = ft_strlen(needle);
-       if (needle_len == 0)
-           return ((char *)haystack);
-       if (len < needle_len)
-           return (NULL);
-       if (len == needle_len)
-       {
-           if (ft_strncmp(haystack, needle, needle_len) == 0)
-               return ((char *)haystack);
-            return (NULL);
-       }
-       i = 0;
-       while (i < len - needle_len + 1 && haystack[i] != '\0')
-       {
-           if (ft_strncmp(&haystack[i], needle, needle_len) == 0)
-                return ((char *)&haystack[i]);
-           i++;
-       }
-       return (NULL);
-}
+// char *ft_strnstr(const char *haystack, const char *needle, size_t len)
+// {
+//        size_t needle_len;
+//        size_t i;
+       
+//        needle_len = ft_strlen(needle);
+//        if (needle_len == '\0')
+//             return ((char *)haystack);
+//        if (len < needle_len)
+//             return (NULL);
+//        if (len == needle_len)
+//        {
+//             if (!(ft_strncmp(haystack, needle, needle_len) == '\0'))
+//                 return (NULL);
+//             return ((char *)haystack);
+//        }
+//        i = 0;
+//        while (i < len - needle_len + 1 && haystack[i] != '\0')
+//        {
+//            if (ft_strncmp(&haystack[i], needle, needle_len) == 0)
+//                 return ((char *)&haystack[i]);
+//            i++;
+//        }
+//         return (NULL);
+// }
 
 // #include <string.h>
 // #include <stdio.h>
@@ -51,9 +51,29 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 //     printf("strnstr: %s\nft_strnstr: %s\n", iii1, iii2);
 //     printf("----------------\n");
 
-//     char    *ssss1 = "abcdefghijk";
-//     char    *ssss2 = "efg";
-//     char    *iiii1 = strnstr(ssss1, ssss2, 2);
-//     char    *iiii2 = ft_strnstr(ssss1, ssss2, 2);
-//     printf("strnstr: %s\nft_strnstr: %s\n", iiii1, iiii2);
+// char    *ssss1 = "abcdefghijk";
+// char    *ssss2 = "efg";
+// char    *iiii1 = strnstr(ssss1, ssss2, 2);
+// char    *iiii2 = ft_strnstr(ssss1, ssss2, 2);
+// printf("strnstr: %s\nft_strnstr: %s\n", iiii1, iiii2);
 // }
+
+char *ft_strnstr(const char *str, const char *substr, size_t len)
+{
+	size_t	i;
+
+	if (substr[0] == '\0')
+		return ((char *)str);
+	while (*str != '\0' && len-- > 0)
+	{
+		i = 0;
+		while (*(str + i) == *(substr + i) && i < len)
+		{
+			i++;
+			if (*(substr + i) == '\0')
+				return ((char *)str);
+		}
+		str++;
+	}
+	return (0);
+}

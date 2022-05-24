@@ -3,18 +3,14 @@
 char *ft_strdup(const char *s1)
 {
     char *data;
-    int i;
+    size_t s1_len;
 
-    data = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
+    s1_len = ft_strlen(s1);
+    data = (char *)malloc(sizeof(char) * (s1_len + 1));
     if (!data)
         return (NULL);
-    i = 0;
-    while (s1[i])
-    {
-      data[i] = s1[i];
-      i++;
-    }
-    data[i] = '\0';
+    ft_memcpy(data, s1, s1_len);
+    data[s1_len] = '\0';
     return (data);
 }
 

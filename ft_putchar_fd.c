@@ -11,7 +11,7 @@ void ft_putchar_fd(char c, int fd)
 int main(void) {
     const char* filename = "./sample.txt";
 
-    int fd = open(filename, O_RDWR | O_CREAT);
+    int fd = open(filename, O_RDWR | O_CREAT, 0777);
     if (fd == -1) {
         perror("no open");
         exit(EXIT_FAILURE);

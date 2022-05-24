@@ -2,18 +2,7 @@
 
 void ft_bzero(void *s, size_t n)
 {
-    // ft_memset(s, '\0', n);
-    unsigned char *ss;
-
-    if (s)
-    {
-        ss = (unsigned char *)s;
-        while (n--)
-        {
-            *(ss++) = 0;
-        }
-        
-    }
+    ft_memset(s, '\0', n);
 }
 
 // #include <string.h>
@@ -35,6 +24,5 @@ void ft_bzero(void *s, size_t n)
 //     {
 //         ft_bzero(pp, 3);
 //         printf("%d\n", pp[i]);
-//     }
-    
+//     }   
 // }

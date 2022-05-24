@@ -22,6 +22,7 @@ int ft_atoi(const char *str)
 {
 	int				sign;
 	unsigned long int		num;
+	unsigned long d;
 	size_t i;
 	size_t count;
     
@@ -34,35 +35,35 @@ int ft_atoi(const char *str)
 	num = 0;
 	while ('0' <= str[i] && str[i] <= '9')
 	{
-		if (count != 0)//?
+		if (count != 0)
 			count++;
-		num = (num * 10) + (str[i] - '0');
-		if ((num > (unsigned long)LONG_MIN && sign == -1) || (count > 19 + '-'))
+		
+		//num = (num * 10) + (str[i] - '0');
+		d = str[i] - '0';
+		if (sign == -1 && (num > (unsigned long)LONG_MIN / 10 || d > (unsigned long)LONG_MIN - num * 10))
 			return (0);
-		if ((num > (unsigned long)LONG_MAX && sign == 1) || (count > 19))
+		if (sign == 1 && (num > LONG_MAX / 10 || d > LONG_MAX - num * 10))
 			return (-1);
+		num = (num * 10) + d;
 		i++;
 	}
 	return(num * sign);
 }
 
-#include <stdio.h>
-int main(void)
-{
-    printf("%d\n", ft_atoi("9223372036854775808"));
-    printf("%d\n", ft_atoi("10"));
-    printf("%d\n", ft_atoi("+123"));
-    printf("%d\n", ft_atoi("-12345678"));
-    printf("%d\n", ft_atoi("0005"));
-    printf("%d\n", ft_atoi("-2147482648"));
-	printf("%d\n", ft_atoi("36803488147419103232444888585858558588558585849499"));
-	printf("%d\n", ft_atoi("000000000000000000008"));
-	printf("%d\n", ft_atoi("-9223333333337203685477580822222222222685949494949499"));
-
-	printf("-----\n");
-	printf("%d\n", ft_atoi("19223372036854775806"));//long long int最後の6が入ってきた時のx10でアウト
-	printf("%d\n", ft_atoi("18446744073709551616"));
-	printf("%d\n", ft_atoi("6341068275337653680"));
-
-
-}
+// #include <stdio.h>
+// int main(void)
+// {
+//     printf("%d\n", ft_atoi("9223372036854775808"));
+//     printf("%d\n", ft_atoi("10"));
+//     printf("%d\n", ft_atoi("+123"));
+//     printf("%d\n", ft_atoi("-12345678"));
+//     printf("%d\n", ft_atoi("0005"));
+//     printf("%d\n", ft_atoi("-2147482648"));
+// 	printf("%d\n", ft_atoi("36803488147419103232444888585858558588558585849499"));
+// 	printf("%d\n", ft_atoi("000000000000000000008"));
+// 	printf("%d\n", ft_atoi("-9223333333337203685477580822222222222685949494949499"));
+// 	printf("-----\n");
+// 	printf("%d\n", ft_atoi("19223372036854775806"));
+// 	printf("%d\n", ft_atoi("18446744073709551616"));
+// 	printf("%d\n", ft_atoi("6341068275337653680"));
+// }

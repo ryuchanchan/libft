@@ -12,7 +12,7 @@ t_list *ft_lstnew(void *content)
     return (param);
 }
 
-// #include <stdio.h>
+// #include <stdio.h> //warning出る
 // int	main(void)
 // {
 //     char str[] = "42";

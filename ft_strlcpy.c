@@ -11,11 +11,11 @@ size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
         i++;
     }
     if (i < dstsize)
-        *(dst + i) = 0;
+        *(dst + i) = '\0';
     while (*(src + i) != '\0')
        i++;
     return (i);
-}
+}//dstとsrcの挙動を見る
 
 // #include <stdio.h>
 // #include <string.h>
