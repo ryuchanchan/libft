@@ -18,7 +18,7 @@ m: $(OBJS)
 bonus: $(B_OBJS)
 	ar rcs $@ $^
 fclean: clean
-	$(RM) libft.a
+	$(RM) libft.a m bonus a.out
 clean:
 	$(RM) $(OBJS) $(B_OBJS)
 

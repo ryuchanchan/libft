@@ -55,41 +55,41 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (NULL);
 }
 
-#include <string.h>
-#include <stdio.h>
-int main()
-{
-    char    *s1 = "ab";
-    char    *s2 = "";
-    char    *i1 = strnstr(s1, s2, 9);
-    char    *i2 = ft_strnstr(s1, s2, 9);
-    printf("strnstr: %s\nft_strnstr: %s\n", i1, i2);
-    printf("----------------\n");
+// #include <string.h>
+// #include <stdio.h>
+// int main()
+// {
+//     char    *s1 = "ab";
+//     char    *s2 = "";
+//     char    *i1 = strnstr(s1, s2, 9);
+//     char    *i2 = ft_strnstr(s1, s2, 9);
+//     printf("strnstr: %s\nft_strnstr: %s\n", i1, i2);
+//     printf("----------------\n");
 
-    char    *ss1 = "abcdefghijk";
-    char    *ss2 = "efg";
-    char    *ii1 = strnstr(ss1, ss2, 11);
-    char    *ii2 = ft_strnstr(ss1, ss2, 11);
-    printf("strnstr: %s\nft_strnstr: %s\n", ii1, ii2);
-    printf("----------------\n");
+//     char    *ss1 = "abcdefghijk";
+//     char    *ss2 = "efg";
+//     char    *ii1 = strnstr(ss1, ss2, 11);
+//     char    *ii2 = ft_strnstr(ss1, ss2, 11);
+//     printf("strnstr: %s\nft_strnstr: %s\n", ii1, ii2);
+//     printf("----------------\n");
 
-    char    *sss1 = "\0DE123  ab";
-    char    *sss2 = "DE";
-    char    *iii1 = strnstr(sss1, sss2, 5);
-    char    *iii2 = ft_strnstr(sss1, sss2, 5);
-    printf("strnstr: %s\nft_strnstr: %s\n", iii1, iii2);
-    printf("----------------\n");
+//     char    *sss1 = "\0DE123  ab";
+//     char    *sss2 = "DE";
+//     char    *iii1 = strnstr(sss1, sss2, 5);
+//     char    *iii2 = ft_strnstr(sss1, sss2, 5);
+//     printf("strnstr: %s\nft_strnstr: %s\n", iii1, iii2);
+//     printf("----------------\n");
 
-    char    *ssss1 = "abcdefghijk";
-    char    *ssss2 = "efg";
-    char    *iiii1 = strnstr(ssss1, ssss2, 2);
-    char    *iiii2 = ft_strnstr(ssss1, ssss2, 2);
-    printf("strnstr: %s\nft_strnstr: %s\n", iiii1, iiii2);
+//     char    *ssss1 = "abcdefghijk";
+//     char    *ssss2 = "efg";
+//     char    *iiii1 = strnstr(ssss1, ssss2, 2);
+//     char    *iiii2 = ft_strnstr(ssss1, ssss2, 2);
+//     printf("strnstr: %s\nft_strnstr: %s\n", iiii1, iiii2);
 
 
-    char    *sssss1 = "abc";
-    char    *sssss2 = "abc";
-    char    *iiiii1 = strnstr(sssss1, sssss2, 3);
-    char    *iiiii2 = ft_strnstr(sssss1, sssss2, 3);
-    printf("strnstr: %s\nft_strnstr: %s\n", iiiii1, iiiii2);
-}
+//     char    *sssss1 = "abc";
+//     char    *sssss2 = "abc";
+//     char    *iiiii1 = strnstr(sssss1, sssss2, 3);
+//     char    *iiiii2 = ft_strnstr(sssss1, sssss2, 3);
+//     printf("strnstr: %s\nft_strnstr: %s\n", iiiii1, iiiii2);
+// }
