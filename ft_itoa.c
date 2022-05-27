@@ -30,7 +30,7 @@ char	*ft_itoa(int n)
         nums = n;
 	    if (n == 0)
 		    convert_c[digits - 1] = 0 + '0';
-	    if (n < 0)//マイナスのサイズを確保してる
+	    if (n < 0)
 	    {
 		    if (n <= INT_MIN)
 			    n++;
@@ -39,7 +39,7 @@ char	*ft_itoa(int n)
 	    }
         while (n)
         {
-            convert_c[digits - 1] = n % 10 + '0';//3, 2, 1 ,0
+            convert_c[digits - 1] = n % 10 + '0';
             n /= 10;
             digits--;
         }
