@@ -14,3 +14,14 @@ int ft_lstsize(t_list *lst)
     }
     return (i);
 }
+
+// #include <stdio.h> //warning出る
+// int	main(void)
+// {
+//     char str1[] = "42";
+//     t_list	*para;
+//     para = ft_lstnew((void *)str1);
+//     printf("%s\n", para->content);
+//     int count = ft_lstsize(para);
+//     printf("%d\n", count);
+// }

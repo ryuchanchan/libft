@@ -25,7 +25,6 @@ size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
 //     char dst[11];
 //     strlcpy(dst,src,sizeof(dst));
 //     printf("%s\n", dst);
-
 //     const char *src1 = "01234\0a5";
 //     char dst1[10];
 //     ft_strlcpy(dst1,src1,sizeof(dst1));
@@ -45,4 +44,4 @@ size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
 //     // char dst5[5];
 
 //     //printf("%zu\n", ft_strlcpy(dst5, src5, sizeof(dst5));
-// }
+//}

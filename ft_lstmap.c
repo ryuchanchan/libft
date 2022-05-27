@@ -11,7 +11,7 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
     if (!create)
         return (NULL);
     overwrite = create;
-    lst = lst->next;//第二リストにインクリメントする
+    lst = lst->next;
     while (lst != NULL)
     {
         overwrite->next = ft_lstnew(f(lst->content));
@@ -25,4 +25,3 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
     }
     return (create);
 }
-//適応させた新しいリスト

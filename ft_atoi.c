@@ -22,7 +22,6 @@ int ft_atoi(const char *str)
 {
 	int				sign;
 	unsigned long int		num;
-	unsigned long d;
 	size_t i;
 	size_t count;
     
@@ -37,14 +36,11 @@ int ft_atoi(const char *str)
 	{
 		if (count != 0)
 			count++;
-		
-		//num = (num * 10) + (str[i] - '0');
-		d = str[i] - '0';
-		if (sign == -1 && (num > (unsigned long)LONG_MIN / 10 || d > (unsigned long)LONG_MIN - num * 10))
+		if (sign == -1 && (num > (unsigned long)LONG_MIN / 10 || (unsigned long)(str[i] - '0') > (unsigned long)LONG_MIN - num * 10))
 			return (0);
-		if (sign == 1 && (num > LONG_MAX / 10 || d > LONG_MAX - num * 10))
+		if (sign == 1 && (num > LONG_MAX / 10 || (unsigned long)(str[i] - '0') > LONG_MAX - num * 10))
 			return (-1);
-		num = (num * 10) + d;
+		num = (num * 10) + (unsigned long)(str[i] - '0');
 		i++;
 	}
 	return(num * sign);
@@ -58,12 +54,9 @@ int ft_atoi(const char *str)
 //     printf("%d\n", ft_atoi("+123"));
 //     printf("%d\n", ft_atoi("-12345678"));
 //     printf("%d\n", ft_atoi("0005"));
-//     printf("%d\n", ft_atoi("-2147482648"));
 // 	printf("%d\n", ft_atoi("36803488147419103232444888585858558588558585849499"));
 // 	printf("%d\n", ft_atoi("000000000000000000008"));
 // 	printf("%d\n", ft_atoi("-9223333333337203685477580822222222222685949494949499"));
-
-// 	printf("-----\n");
 // 	printf("%d\n", ft_atoi("19223372036854775806"));
 // 	printf("%d\n", ft_atoi("18446744073709551616"));
 // 	printf("%d\n", ft_atoi("6341068275337653680"));
