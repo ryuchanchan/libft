@@ -12,7 +12,7 @@ static int	num_size(int n)
 	while (n)
 	{
 		i++;
-		n /= 10;//3桁のために3回わって１のくらいずつiで出す
+		n /= 10;
     }
 	return (i);
 }
