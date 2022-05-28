@@ -47,9 +47,8 @@ int	ft_atoi(const char	*str)
 	num = 0;
 	while ('0' <= str[i] && str[i] <= '9')
 	{
-		if (count != 0)
-			count++;
-		if (sign == -1 && (num > (unsigned long)LONG_MIN / 10 || (unsigned long)(str[i] - '0') > (unsigned long)LONG_MIN - num * 10))
+		if (sign == -1 && (num > (unsigned long)LONG_MIN / 10 || \
+		(unsigned long)(str[i] - '0') > (unsigned long)LONG_MIN - num * 10))
 			return (0);
 		if (sign == 1 && (num > LONG_MAX / 10 || \
 					(unsigned long)(str[i] - '0') > LONG_MAX - num * 10))
