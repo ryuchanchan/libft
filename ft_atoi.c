@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rykawamu </var/mail/rykawamu>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/28 16:45:02 by rykawamu          #+#    #+#             */
+/*   Updated: 2022/05/28 16:56:11 by rykawamu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static int	check_sign(const char *str, int i,int *sign)
+static int	check_sign(const char	*str, int	i, int	*sign)
 {
 	if (str[i] == '-' || str[i] == '+')
 	{
@@ -11,24 +23,25 @@ static int	check_sign(const char *str, int i,int *sign)
 	return (i);
 }
 
-static int check_space(int c)
+static int	check_space(int	c)
 {
-	if (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r' || c == ' ')
+	if (c == '\t' || c == '\n' || \
+			c == '\v' || c == '\f' || c == '\r' || c == ' ')
 		return (1);
 	return (0);
 }
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char	*str)
 {
-	int				sign;
-	unsigned long int		num;
-	size_t i;
-	size_t count;
-    
-    i = 0;
+	int					sign;
+	unsigned long int	num;
+	size_t				i;
+	size_t				count;
+
+	i = 0;
 	sign = 1;
 	while (check_space(str[i]))
-		i++;	
+		i++;
 	i = check_sign(str, i, &sign);
 	count = 0;
 	num = 0;
@@ -38,12 +51,13 @@ int ft_atoi(const char *str)
 			count++;
 		if (sign == -1 && (num > (unsigned long)LONG_MIN / 10 || (unsigned long)(str[i] - '0') > (unsigned long)LONG_MIN - num * 10))
 			return (0);
-		if (sign == 1 && (num > LONG_MAX / 10 || (unsigned long)(str[i] - '0') > LONG_MAX - num * 10))
+		if (sign == 1 && (num > LONG_MAX / 10 || \
+					(unsigned long)(str[i] - '0') > LONG_MAX - num * 10))
 			return (-1);
 		num = (num * 10) + (unsigned long)(str[i] - '0');
 		i++;
 	}
-	return(num * sign);
+	return (num * sign);
 }
 
 // #include <stdio.h>

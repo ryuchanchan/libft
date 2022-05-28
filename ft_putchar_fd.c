@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rykawamu </var/mail/rykawamu>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/28 16:21:06 by rykawamu          #+#    #+#             */
+/*   Updated: 2022/05/28 16:21:29 by rykawamu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char	c, int	fd)
 {
-    write(fd, &c, 1);
+	write(fd, &c, 1);
 }
 
 /*#include <stdio.h>

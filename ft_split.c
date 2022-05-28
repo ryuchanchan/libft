@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rykawamu </var/mail/rykawamu>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/28 16:33:48 by rykawamu          #+#    #+#             */
+/*   Updated: 2022/05/28 16:43:06 by rykawamu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static size_t	check(const char *s, char sep)
+static size_t	check(const char	*s, char	sep)
 {
 	size_t	i;
 
@@ -10,7 +22,7 @@ static size_t	check(const char *s, char sep)
 	return (i);
 }
 
-static char	*ft_strndup(char const *s1, size_t n)
+static char	*ft_strndup(char const	*s1, size_t	n)
 {
 	size_t	i;
 	char	*data;
@@ -34,7 +46,7 @@ static char	*ft_strndup(char const *s1, size_t n)
 	return (data);
 }
 
-static char	**arrays(char **ss, size_t sc, const char *s, const char c)
+static char	**arrays(char	**ss, size_t	sc, const char	*s, const char	c)
 {
 	size_t	i;
 	size_t	j;
@@ -61,7 +73,7 @@ static char	**arrays(char **ss, size_t sc, const char *s, const char c)
 	return (ss);
 }
 
-static size_t count_element_size(char const *s, char c)
+static size_t	count_element_size(char const	*s, char	c)
 {
 	size_t	i;
 	size_t	count;
@@ -83,11 +95,11 @@ static size_t count_element_size(char const *s, char c)
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char const	*s, char	c)
 {
-	char		**splits;
-	size_t		element_size;
-	
+	char	**splits;
+	size_t	element_size;
+
 	if (!s)
 		return (NULL);
 	element_size = count_element_size(s, c);
@@ -103,7 +115,6 @@ char	**ft_split(char const *s, char c)
 // {
 // 	char **spi;
 // 	int i = 0;
-
 // 	spi = ft_split(",", ',');//最初と最後は数えない　連続したら無視する,,,-42,tokyo_osaka ,nagoya,fukuoka,, okinawa,-,,,
 // 	while (spi[i])
 // 	{

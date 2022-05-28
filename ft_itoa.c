@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rykawamu </var/mail/rykawamu>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/28 15:19:50 by rykawamu          #+#    #+#             */
+/*   Updated: 2022/05/28 15:26:55 by rykawamu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static int	num_size(int n)
+static int	num_size(int	n)
 {
 	int	i;
 
@@ -13,38 +25,38 @@ static int	num_size(int n)
 	{
 		i++;
 		n /= 10;
-    }
+	}
 	return (i);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(int	n)
 {
-	char            *convert_c;
-    int             nums;
-	unsigned int    digits;
+	char			*convert_c;
+	int				nums;
+	unsigned int	digits;
 
 	digits = num_size(n);
-    convert_c = ft_calloc((digits + 1), sizeof(char));
+	convert_c = ft_calloc((digits + 1), sizeof(char));
 	if (convert_c)
 	{
-        nums = n;
-	    if (n == 0)
-		    convert_c[digits - 1] = 0 + '0';
-	    if (n < 0)
-	    {
-		    if (n <= INT_MIN)
-			    n++;
-		    n *= -1;
-            convert_c[0] = '-';
-	    }
-        while (n)
-        {
-            convert_c[digits - 1] = n % 10 + '0';
-            n /= 10;
-            digits--;
-        }
-        if (nums == INT_MIN)
-            convert_c[10] = '8';
+		nums = n;
+		if (n == 0)
+			convert_c[digits - 1] = 0 + '0';
+		if (n < 0)
+		{
+			if (n <= INT_MIN)
+				n++;
+			n *= -1;
+			convert_c[0] = '-';
+		}
+		while (n)
+		{
+			convert_c[digits - 1] = n % 10 + '0';
+			n /= 10;
+			digits--;
+		}
+		if (nums == INT_MIN)
+			convert_c[10] = '8';
 		return (convert_c);
 	}
 	return (NULL);
