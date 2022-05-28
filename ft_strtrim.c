@@ -1,28 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rykawamu </var/mail/rykawamu>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/28 18:29:53 by rykawamu          #+#    #+#             */
+/*   Updated: 2022/05/28 18:33:27 by rykawamu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-#include <stdio.h>
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const	*s1, char const	*set)
 {
-    char *trim;
-    size_t front_finder;
-    size_t back_finder;
+	char	*trim;
+	size_t	front_finder;
+	size_t	back_finder;
 
-    if (s1)
-    {
-        if (*s1 == '\0' || !set)
-            return (ft_strdup(s1));
-        front_finder = 0;
-        while (ft_strchr(set, s1[front_finder]) != NULL)
-            front_finder++;
-        back_finder = ft_strlen(s1);
-        while (ft_strchr(set, s1[back_finder]) != NULL && back_finder > front_finder)
-            back_finder--;
-        trim = ft_substr(s1, front_finder, back_finder - front_finder + 1);
-        return (trim);
-    }
-    return (NULL);
+	if (s1)
+	{
+		if (*s1 == '\0' || !set)
+			return (ft_strdup(s1));
+		front_finder = 0;
+		while (ft_strchr(set, s1[front_finder]) != NULL)
+			front_finder++;
+		back_finder = ft_strlen(s1);
+		while (ft_strchr(set, s1[back_finder]) != NULL && \
+				back_finder > front_finder)
+			back_finder--;
+		trim = ft_substr(s1, front_finder, back_finder - front_finder + 1);
+		return (trim);
+	}
+	return (NULL);
 }
 
+//#include <stdio.h>
 // int main()
 // {
 //     char *result;

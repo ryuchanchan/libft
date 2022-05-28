@@ -1,20 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rykawamu </var/mail/rykawamu>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/28 18:36:56 by rykawamu          #+#    #+#             */
+/*   Updated: 2022/05/28 18:38:03 by rykawamu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char	*s, int	c)
 {
-    size_t i;
-    char *ss;
+	size_t	i;
+	char	*ss;
 
-    ss = (char *)s;
-    i = ft_strlen(s) + 1;
-    while (i--)
-    {
-        if (ss[i] == (char)c)
-            return ((char *)&ss[i]);
-    }
-    return (NULL);
+	ss = (char *)s;
+	i = ft_strlen(s) + 1;
+	while (i--)
+	{
+		if (ss[i] == (char)c)
+			return ((char *)&ss[i]);
+	}
+	return (NULL);
 }
-
 /*#include <string.h>
 #include <stdio.h>
 int main()
