@@ -115,13 +115,11 @@ char	**ft_split(char const	*s, char	c)
 // {
 // 	char **spi;
 // 	int i = 0;
-// 	spi = ft_split(",", ',');
+// 	spi = ft_split(",,-42,a,b,c,d,-,,,", ',');//,
 // 	while (spi[i])
 // 	{
 // 		printf("%s\n", spi[i]);
-// 		// printf("\"%s\" ", spi[i]);
 // 		i++;
 // 	}
-// 	//printf("count = %zu\n", count_element_size(",,-42,a,b,c,d,-,,,", ','));
 // 	return (0);
 // }
