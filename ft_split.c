@@ -6,7 +6,7 @@
 /*   By: rykawamu </var/mail/rykawamu>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 16:33:48 by rykawamu          #+#    #+#             */
-/*   Updated: 2022/05/28 16:43:06 by rykawamu         ###   ########.fr       */
+/*   Updated: 2022/05/29 02:16:32 by rykawamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,13 +115,13 @@ char	**ft_split(char const	*s, char	c)
 // {
 // 	char **spi;
 // 	int i = 0;
-// 	spi = ft_split(",", ',');//最初と最後は数えない　連続したら無視する,,,-42,tokyo_osaka ,nagoya,fukuoka,, okinawa,-,,,
+// 	spi = ft_split(",", ',');
 // 	while (spi[i])
 // 	{
 // 		printf("%s\n", spi[i]);
 // 		// printf("\"%s\" ", spi[i]);
 // 		i++;
 // 	}
-// 	//printf("count = %zu\n", count_element_size(",,-42,tokyo_osaka ,nagoya,fukuoka,, okinawa,-,,,", ','));
+// 	//printf("count = %zu\n", count_element_size(",,-42,a,b,c,d,-,,,", ','));
 // 	return (0);
 // }
