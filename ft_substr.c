@@ -29,13 +29,9 @@ char	*ft_substr(char const	*s, unsigned int	start, size_t	len)
 	if (s)
 	{
 		if (ft_strlen(s) < start)
-		{
-			if (!(sub = (char *)malloc(sizeof(char))))
-				return (NULL);
-			sub[0] = '\0';
-			return (sub);
-		}
-		if (!(sub = (char *)malloc(sizeof(char) * (lencheck(s, start, len) + 1))))
+			return (ft_strdup(""));		
+		sub = (char *)malloc(sizeof(char) * (lencheck(s, start, len) + 1));
+		if (!sub)
 			return (NULL);
 		i = 0;
 		j = 0;
@@ -66,4 +62,6 @@ char	*ft_substr(char const	*s, unsigned int	start, size_t	len)
 //     //test2
 //     char *str4 = ft_substr("tripouille", 0, 42000);
 //     printf("%s\n", str4);
+// 	char *str5 = ft_substr("tripouille", 4, 0);
+//     printf("%s\n", str5);
 // }

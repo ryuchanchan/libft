@@ -23,11 +23,11 @@ t_list	*ft_lstnew(void	*content)
 	param ->next = NULL;
 	return (param);
 }
-// #include <stdio.h> //warning出る
+// #include <stdio.h>
 // int	main(void)
 // {
 //     char str[] = "42";
 //     t_list	*para; 
 //     para = ft_lstnew((void *)str);
-//     printf("%s\n", para->content);
+//     printf("%s\n", (char *)para->content);
 // }
