@@ -27,12 +27,6 @@ static char	*ft_strndup(char const	*s1, size_t	n)
 	size_t	i;
 	char	*data;
 
-	if (n < 0)
-	{
-		n = 0;
-		while (s1[n] != '\0')
-			n++;
-	}
 	data = (char *)malloc(sizeof(char) * (n + 1));
 	if (!data)
 		return (0);
