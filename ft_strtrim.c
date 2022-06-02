@@ -29,7 +29,7 @@ char	*ft_strtrim(char const	*s1, char const	*set)
 		while (ft_strchr(set, s1[back_finder]) != NULL && \
 				back_finder > front_finder)
 			back_finder--;
-		trim = ft_substr(s1, front_finder, back_finder - front_finder + 1);
+		trim = ft_substr(s1 + front_finder, 0,  back_finder - front_finder + 1);
 		return (trim);
 	}
 	return (NULL);
