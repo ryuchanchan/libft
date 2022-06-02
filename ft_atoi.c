@@ -36,14 +36,12 @@ int	ft_atoi(const char	*str)
 	int					sign;
 	unsigned long int	num;
 	size_t				i;
-	size_t				count;
 
 	i = 0;
 	sign = 1;
 	while (check_space(str[i]))
 		i++;
 	i = check_sign(str, i, &sign);
-	count = 0;
 	num = 0;
 	while ('0' <= str[i] && str[i] <= '9')
 	{
