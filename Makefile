@@ -25,13 +25,12 @@ $(NAME): $(OBJS) $(B_OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) -o $@ -c $<
 re: fclean all
-m: $(OBJS)
-	ar rcs $@ $^
-bonus: $(B_OBJS)
-	ar rcs $@ $^
+
+bonus: $(NAME)
+
 fclean: clean
-	$(RM) libft.a m bonus a.out
+	$(RM) libft.a
 clean:
 	$(RM) $(OBJS) $(B_OBJS)
 
-.PHONY: all clean fclean re m bonus
+.PHONY: all clean fclean re bonus

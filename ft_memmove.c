@@ -40,7 +40,6 @@ void	*ft_memmove(void	*dest, const void	*src, size_t	n)
 
 // #include <stdio.h>
 // #include <string.h>
-// #include <stdlib.h>
 // int main()
 // {
 //     char *s = malloc(7);
