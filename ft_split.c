@@ -93,6 +93,7 @@ char	**ft_split(char const	*s, char	c)
 {
 	char	**splits;
 	size_t	element_size;
+	char 	**tmp;
 
 	if (!s)
 		return (NULL);
@@ -100,7 +101,9 @@ char	**ft_split(char const	*s, char	c)
 	splits = (char **)malloc(sizeof(char *) * (element_size + 1));
 	if (!splits)
 		return (0);
-	arrays(splits, element_size, (char *)s, c);
+	tmp = arrays(splits, element_size, (char *)s, c);
+	if (tmp == NULL)
+		return (NULL);
 	return (splits);
 }
 

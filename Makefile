@@ -19,6 +19,10 @@ OBJS	= $(SRCS:.c=.o)
 B_OBJS	= $(BONUS:.c=.o)
 RM		= rm -f
 
+ifdef with_bonus
+    OBJS += $(B_OBJS)
+endif
+
 all: $(NAME)
 $(NAME): $(OBJS) $(B_OBJS)
 	ar rs $@ $^
@@ -26,8 +30,8 @@ $(NAME): $(OBJS) $(B_OBJS)
 	$(CC) $(CFLAGS) -o $@ -c $<
 re: fclean all
 
-bonus: $(NAME)
-
+bonus: #$(NAME)
+	make with_bonus=1
 fclean: clean
 	$(RM) libft.a
 clean:
