@@ -22,8 +22,6 @@ static int	lencheck(char const	*s, unsigned int	start, size_t	len)
 
 char	*ft_substr(char const	*s, unsigned int	start, size_t	len)
 {
-	// size_t	i;
-	// size_t	j;
 	char	*sub;
 
 	if (s)
@@ -33,19 +31,7 @@ char	*ft_substr(char const	*s, unsigned int	start, size_t	len)
 		sub = ft_calloc((lencheck(s, start, len) + 1), sizeof(char));
 		if (!sub)
 			return (NULL);
-		// i = 0;
-		// j = 0;
-		// while (s[i])
-		// {
-		// 	if (i >= start && j < len)
-		// 	{
-		// 		sub[j] = s[i];
-		// 		j++;
-		// 	}
-		// 	i++;
-		// }
 		ft_strlcpy(sub, s + start, len + 1);
-		// sub[j] = '\0';
 		return (sub);
 	}
 	return (NULL);
