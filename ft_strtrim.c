@@ -6,7 +6,7 @@
 /*   By: rykawamu </var/mail/rykawamu>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 18:29:53 by rykawamu          #+#    #+#             */
-/*   Updated: 2022/05/28 18:33:27 by rykawamu         ###   ########.fr       */
+/*   Updated: 2022/06/05 21:13:11 by rykawamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strtrim(char const	*s1, char const	*set)
 		while (ft_strchr(set, s1[back_finder]) != NULL && \
 				back_finder > front_finder)
 			back_finder--;
-		trim = ft_substr(s1 + front_finder, 0,  back_finder - front_finder + 1);
+		trim = ft_substr(s1 + front_finder, 0, back_finder - front_finder + 1);
 		return (trim);
 	}
 	return (NULL);

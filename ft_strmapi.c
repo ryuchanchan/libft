@@ -6,7 +6,7 @@
 /*   By: rykawamu </var/mail/rykawamu>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 18:21:01 by rykawamu          #+#    #+#             */
-/*   Updated: 2022/05/28 18:23:42 by rykawamu         ###   ########.fr       */
+/*   Updated: 2022/06/05 21:12:25 by rykawamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strmapi(char const	*s, char	(f)(unsigned int, char))
 {
 	char			*ss;
-	size_t	i;
+	size_t			i;
 
 	if (!s)
 		return (NULL);

@@ -6,7 +6,7 @@
 #    By: rykawamu </var/mail/rykawamu>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 00:06:06 by rykawamu          #+#    #+#              #
-#    Updated: 2022/05/30 00:06:12 by rykawamu         ###   ########.fr        #
+#    Updated: 2022/06/05 21:16:03 by rykawamu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,6 @@ OBJS	= $(SRCS:.c=.o)
 B_OBJS	= $(BONUS:.c=.o)
 RM		= rm -f
 
-ifdef with_bonus
-    OBJS += $(B_OBJS)
-endif
-
 all: $(NAME)
 $(NAME): $(OBJS) $(B_OBJS)
 	ar rs $@ $^
@@ -30,8 +26,8 @@ $(NAME): $(OBJS) $(B_OBJS)
 	$(CC) $(CFLAGS) -o $@ -c $<
 re: fclean all
 
-bonus: #$(NAME)
-	make with_bonus=1
+bonus: $(NAME)
+
 fclean: clean
 	$(RM) libft.a
 clean:

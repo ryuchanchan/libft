@@ -6,7 +6,7 @@
 /*   By: rykawamu </var/mail/rykawamu>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 16:33:48 by rykawamu          #+#    #+#             */
-/*   Updated: 2022/05/29 02:16:32 by rykawamu         ###   ########.fr       */
+/*   Updated: 2022/06/05 21:11:49 by rykawamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ char	**ft_split(char const	*s, char	c)
 {
 	char	**splits;
 	size_t	element_size;
-	char 	**tmp;
+	char	**tmp;
 
 	if (!s)
 		return (NULL);
