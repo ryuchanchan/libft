@@ -21,7 +21,7 @@ void	*ft_memcpy(void	*dst, const void	*src, size_t	n)
 	dst_2 = (unsigned char *)dst;
 	src_2 = (const unsigned char *)src;
 	i = 0;
-	if (dst == src)
+	if (dst == src || n == 0)
 		return (dst);
 	while (i < n)
 	{
@@ -45,4 +45,8 @@ void	*ft_memcpy(void	*dst, const void	*src, size_t	n)
 //     // printf("%s\n", d);
 //     ft_memcpy(dst, src, 3);
 //     printf("%s\n", dst);
+// 	char *dst2 = "123";
+//     char *src2 = "123";  
+// 	memcpy(dst2, src2, 0);
+// 	printf("%s\n", dst2);
 // }
